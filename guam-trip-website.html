@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>同期10名のグアム旅行 | 2025年6月</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00b4d8; /* より鮮やかな青 */
+            --secondary: #ffdd00; /* より明るい黄色 */
+            --accent: #ff5a5f; /* 赤みの強いサンゴ色 */
+            --light: #f0fdff; /* より明るい背景色 */
+            --dark: #023e8a; /* 深いブルー */
+            --text: #333333;
+            --background: #ffffff;
+            --gradient-1: #fd5e53; /* サンセットグラデーション開始色 */
+            --gradient-2: #ff9966; /* サンセットグラデーション中間色 */
+            --gradient-3: #ffcc33; /* サンセットグラデーション終了色 */
+            --tropical-green: #00cc8e; /* トロピカルな緑 */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.6;
+            overflow-x: hidden; /* 水平スクロールバーを非表示に */
+        }
+        
+        .header {
+            height: 70vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=1974&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            position: relative;
+            overflow: hidden; /* はみ出した要素を隠す */
+        }
+        
+        /* 波のアニメーション */
+        .header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/svgs/solid/wave.svg') repeat-x;
+            background-size: 60px 100%;
+            animation: wave 10s linear infinite;
+            opacity: 0.7;
+        }
+        
+        @keyframes wave {
+            0% {
+                background-position-x: 0;
+            }
+            100% {
+                background-position-x: 1000px;
+            }
+        }
+        
+        .header h1 {
+            font-size: 3.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            animation: fadeInDown 1.2s ease-out;
+        }
+        
+        .header p {
+            font-size: 1.7rem;
+            max-width: 800px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+            animation: fadeInUp 1.5s ease-out;
+            background: linear-gradient(to right, var(--gradient-1), var(--gradient-3));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            margin-top: 10px;
+            text-shadow: none;
+        }
+        
+        /* アニメーション定義 */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .engine-logo {
+            font-size: 2rem;
+            background: linear-gradient(45deg, var(--gradient-1), var(--gradient-3));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        section {
+            margin-bottom: 4rem;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        
+        section:nth-child(1) { animation-delay: 0.2s; }
+        section:nth-child(2) { animation-delay: 0.4s; }
+        section:nth-child(3) { animation-delay: 0.6s; }
+        section:nth-child(4) { animation-delay: 0.8s; }
+        section:nth-child(5) { animation-delay: 1s; }
+        
+        h2 {
+            color: var(--dark);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1rem;
+            border-left: 5px solid var(--primary);
+            background: linear-gradient(to right, var(--primary), transparent);
+            padding: 8px 15px;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 180, 216, 0.2);
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+        
+        h2:hover {
+            transform: translateX(0);
+            box-shadow: 0 6px 12px rgba(0, 180, 216, 0.3);
+        }
+        
+        h3 {
+            color: var(--dark);
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--gradient-1), var(--gradient-3));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        h3:hover::after {
+            transform: scaleX(1);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .intro {
+            background: linear-gradient(135deg, var(--light), white);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 180, 216, 0.1);
+            border: 1px solid rgba(0, 180, 216, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .intro:hover {
+            box-shadow: 0 15px 40px rgba(0, 180, 216, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .intro::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+        }
+        
+        .intro:hover::before {
+            top: 110%;
+            right: 110%;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .image-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            z-index: 1;
+            transform: perspective(1000px) rotateY(0deg);
+        }
+        
+        .image-card:hover {
+            transform: perspective(1000px) rotateY(5deg) translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+        
+        .image-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+            transition: all 0.5s ease;
+            filter: saturate(1.2);
+        }
+        
+        .image-card:hover img {
+            transform: scale(1.1);
+            filter: saturate(1.5) brightness(1.1);
+        }
+        
+        .image-caption {
+            padding: 1.2rem;
+            background: linear-gradient(to right, white, var(--light));
+            position: relative;
+            z-index: 2;
+        }
+        
+        .image-caption h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .image-caption h4::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(to right, var(--accent), transparent);
+            transition: width 0.3s ease;
+        }
+        
+        .image-card:hover .image-caption h4::after {
+            width: 100%;
+        }
+        
+        .image-caption p {
+            font-size: 0.95rem;
+            color: #555;
+            position: relative;
+            z-index: 2;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 2rem 0;
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        table:hover {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        th {
+            background: linear-gradient(to right, var(--primary), #48cae4);
+            color: white;
+            text-align: left;
+            padding: 1.2rem 1rem;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        th::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.8s ease;
+        }
+        
+        table:hover th::after {
+            left: 100%;
+        }
+        
+        td {
+            padding: 1.2rem 1rem;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        tr:hover td {
+            background-color: rgba(0, 180, 216, 0.05);
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9fbfd;
+        }
+        
+        .highlight {
+            background: linear-gradient(to right, rgba(255, 221, 0, 0.1), rgba(255, 153, 102, 0.1));
+            position: relative;
+        }
+        
+        .highlight::before {
+            content: '★';
+            position: absolute;
+            left: 0;
+            color: var(--gradient-2);
+            opacity: 0.4;
+            font-size: 1.2rem;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: linear-gradient(45deg, var(--primary), var(--tropical-green));
+            color: white;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-right: 0.8rem;
+            margin-bottom: 0.8rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 180, 216, 0.3);
+            transform: translateY(0);
+        }
+        
+        .tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 180, 216, 0.4);
+        }
+        
+        .note-box {
+            background: linear-gradient(135deg, rgba(0, 180, 216, 0.05), rgba(0, 204, 142, 0.05));
+            border-left: 4px solid var(--primary);
+            padding: 1.8rem;
+            margin: 2rem 0;
+            border-radius: 0 12px 12px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .note-box:hover {
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .note-box::before {
+            content: '💡';
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 1.5rem;
+            opacity: 0.2;
+            transform: rotate(-15deg);
+            transition: all 0.3s ease;
+        }
+        
+        .note-box:hover::before {
+            transform: rotate(0deg) scale(1.2);
+            opacity: 0.4;
+        }
+        
+        .note-box p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .day-label {
+            background: linear-gradient(45deg, var(--accent), var(--gradient-2));
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 0.8rem;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(255, 90, 95, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        tr:hover .day-label {
+            box-shadow: 0 6px 15px rgba(255, 90, 95, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--accent), var(--gradient-1));
+            color: white;
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 25px rgba(255, 90, 95, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--gradient-1), var(--accent));
+            z-index: -1;
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(255, 90, 95, 0.4);
+        }
+        
+        .cta-button:hover::before {
+            opacity: 1;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--dark), #0077b6);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, var(--gradient-1), var(--gradient-3));
+        }
+        
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/svgs/solid/wave.svg') repeat-x;
+            background-size: 50px 100%;
+            opacity: 0.1;
+            transform: rotate(180deg);
+        }
+        
+        .emoji {
+            font-size: 1.8em;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+            display: inline-block;
+            transform-origin: center;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .highlight-card {
+            flex: 1 1 300px;
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .highlight-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            z-index: 2;
+        }
+        
+        .highlight-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .highlight-card:hover img {
+            transform: scale(1.1);
+            filter: contrast(1.1) brightness(1.1);
+        }
+        
+        .highlight-content {
+            padding: 1.8rem;
+            position: relative;
+        }
+        
+        .highlight-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--primary), transparent);
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+        
+        .highlight-card:hover .highlight-content::before {
+            transform: scaleX(1);
+        }
+        
+        .highlight-content h3 {
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+        
+        .highlight-card:hover .highlight-content h3 {
+            color: var(--primary);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header {
+                height: 60vh;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header p {
+                font-size: 1.2rem;
+            }
+            
+            .engine-logo {
+                font-size: 1.5rem;
+            }
+            
+            .container {
+                padding: 1.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            th, td {
+                padding: 0.8rem;
+            }
+            
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .highlights {
+                flex-direction: column;
+            }
+            
+            .tag {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="engine-logo">⚙️ 円進 ENGINE ⚙️</div>
+        <h1>🚀 同期10名のグアム旅行 2025</h1>
+        <p>太陽、海、笑顔があふれる4日間の冒険！</p>
+    </div>
+    
+    <div class="container">
+        <section class="intro">
+            <h2>旅行プラン概要</h2>
+            <p><strong>期間：</strong>2025年6月12日(木) 前泊 〜 6月15日(日)</p>
+            <p><strong>拠点：</strong>デュシット・ビーチ・リゾート・グアム</p>
+            <p><strong>参加者：</strong>同期メンバー 計10名</p>
+            
+            <div class="highlights">
+                <div class="highlight-card">
+                    <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=2264&auto=format&fit=crop" alt="グアムのビーチ">
+                    <div class="highlight-content">
+                        <h3>グアムの魅力</h3>
+                        <p>透明度抜群の海、美しいサンセット、南国のリゾート体験を思う存分楽しめる4日間！</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <img src="https://images.unsplash.com/photo-1599411830175-67f06929a6ce?q=80&w=2071&auto=format&fit=crop" alt="ホテルプール">
+                    <div class="highlight-content">
+                        <h3>豪華リゾートステイ</h3>
+                        <p>デュシット・ビーチ・リゾートで贅沢なひとときを。プール、海、スパなど充実の施設！</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <img src="https://images.unsplash.com/photo-1528690947381-3c5a5e70e444?q=80&w=2070&auto=format&fit=crop" alt="グルメ">
+                    <div class="highlight-content">
+                        <h3>絶品グルメ体験</h3>
+                        <p>特大ロブスター、アサイーボウル、朝食ビュッフェなど、グアムの美食を堪能！</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>1️⃣ 日程早見表</h2>
+            
+            <div class="image-gallery">
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1600240644455-fd911f7cd44a?q=80&w=2060&auto=format&fit=crop" alt="グアムビーチ">
+                    <div class="image-caption">
+                        <h4>絶景ビーチでの朝日</h4>
+                        <p>朝日チャレンジで最高の1日をスタート！</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1589279715734-6631a314dca4?q=80&w=2070&auto=format&fit=crop" alt="恋人岬">
+                    <div class="image-caption">
+                        <h4>恋人岬のサンセット</h4>
+                        <p>記念撮影にぴったりの絶景スポット</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?q=80&w=2069&auto=format&fit=crop" alt="ビーチヨガ">
+                    <div class="image-caption">
+                        <h4>朝のビーチヨガ</h4>
+                        <p>最終日は爽やかなヨガで締めくくり</p>
+                    </div>
+                </div>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>日付</th>
+                        <th>時刻</th>
+                        <th>主要アクティビティ</th>
+                        <th>食事</th>
+                        <th>移動手段</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="day-label">6/12 (木)</span><br>前泊</td>
+                        <td>18:30<br>20:00<br>22:30</td>
+                        <td>京成臼井駅集合 → Airbnb〈タタミハウス〉チェックイン<br>旅程ブリーフィング／Tシャツ配布<br>就寝</td>
+                        <td>—</td>
+                        <td>徒歩8分<br>—<br>—</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td><span class="day-label">6/13 (金)</span><br>DAY 1</td>
+                        <td>06:00<br>10:00<br>14:45<br>15:45<br>18:10<br>20:00‑22:00</td>
+                        <td>Airbnb発 → 成田空港（貸切バン）<br>JL941 発<br>グアム着 → ホテルチェックイン<br>Don Quijote & Häagen‑Dazs（GPO）<br>恋人岬 サンセット撮影<br>Tony Roma's で特大ロブスター</td>
+                        <td>—<br>機内<br>—<br>—<br>—<br>夕</td>
+                        <td>チャーターバン<br>—<br>ホテルシャトル<br>チャーターバン<br>同バン<br>同バン</td>
+                    </tr>
+                    <tr>
+                        <td><span class="day-label">6/14 (土)</span><br>DAY 2</td>
+                        <td>06:00<br>07:00<br>09:10<br>13:00<br>15:00<br>16:00<br>18:00‑20:00</td>
+                        <td>朝日チャレンジ（ホテル前ビーチ）<br>朝食ビュッフェ<br>ホテル発 → GPO（買い物）<br>バス発 → 14:00 ホテル着<br>Café Gudcha でアサイーボウル<br>テニス／プールなど自由行動<br>会社合同パーティー（ホテル宴会場）</td>
+                        <td>—<br>朝<br>—<br>昼<br>おやつ<br>—<br>夕</td>
+                        <td>—<br>—<br>赤いシャトルバス<br>赤バス<br>徒歩<br>—<br>—</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td><span class="day-label">6/15 (日)</span><br>DAY 3</td>
+                        <td>06:30‑07:30<br>07:45<br>11:00<br>14:00<br>16:45<br>19:30</td>
+                        <td>ヨガセッション（9名）<br>朝食ビュッフェ<br>チェックアウト → お土産ショッピング<br>ホテル発 → 空港（チャーターバン）<br>JL942 発<br>成田着</td>
+                        <td>—<br>朝<br>—<br>—<br>機内<br>—</td>
+                        <td>—<br>—<br>徒歩<br>チャーターバン<br>—<br>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section>
+            <h2>2️⃣ 確定済み予約</h2>
+            
+            <div class="image-gallery">
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1590073242678-70ee3fc28f8a?q=80&w=2121&auto=format&fit=crop" alt="キャビンイメージ">
+                    <div class="image-caption">
+                        <h4>〈タタミハウス〉での前泊</h4>
+                        <p>旅の始まりを祝う特別な空間</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=2187&auto=format&fit=crop" alt="シーフードディナー">
+                    <div class="image-caption">
+                        <h4>Tony Roma's 特大ロブスター</h4>
+                        <p>グアム到着初日の豪華ディナー</p>
+                    </div>
+                </div>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>項目</th>
+                        <th>日時</th>
+                        <th>人数</th>
+                        <th>備考</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Airbnb〈タタミハウス〉</td>
+                        <td>6/12</td>
+                        <td>10</td>
+                        <td>前泊</td>
+                    </tr>
+                    <tr>
+                        <td>Tony Roma's Guam</td>
+                        <td>6/13 20:00‑22:00</td>
+                        <td>10</td>
+                        <td>ロブスター & リブ</td>
+                    </tr>
+                    <tr>
+                        <td>ホテル宴会場</td>
+                        <td>6/14 18:00‑20:00</td>
+                        <td>会社指定</td>
+                        <td>コース＋飲み放題</td>
+                    </tr>
+                    <tr>
+                        <td>ヨガマットレンタル</td>
+                        <td>6/15 06:30‑07:30</td>
+                        <td>9</td>
+                        <td>ガーデン</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section>
+            <h2>3️⃣ 移動手段案</h2>
+            
+            <div class="image-gallery">
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1555626906-fcf10d6851b4?q=80&w=2070&auto=format&fit=crop" alt="シャトルバス">
+                    <div class="image-caption">
+                        <h4>便利な赤いシャトルバス</h4>
+                        <p>GPOへのショッピングに最適</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1516437124483-b7025d0f434b?q=80&w=1964&auto=format&fit=crop" alt="ビーチウォーク">
+                    <div class="image-caption">
+                        <h4>ビーチサイドの徒歩移動</h4>
+                        <p>ホテル周辺は景色を楽しみながら</p>
+                    </div>
+                </div>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>区間</th>
+                        <th>推奨手段</th>
+                        <th>所要</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Airbnb ↔ 成田空港</td>
+                        <td>チャーターバン</td>
+                        <td>45分</td>
+                    </tr>
+                    <tr>
+                        <td>グアム空港 ↔ ホテル</td>
+                        <td>ホテルシャトル</td>
+                        <td>15分</td>
+                    </tr>
+                    <tr>
+                        <td>ホテル ↔ GPO／恋人岬／Tony Roma's</td>
+                        <td>チャーターバン</td>
+                        <td>各10‑15分</td>
+                    </tr>
+                    <tr>
+                        <td>2日目 ホテル ↔ GPO</td>
+                        <td>赤いシャトルバス</td>
+                        <td>15分</td>
+                    </tr>
+                    <tr>
+                        <td>ホテル構内・ビーチ</td>
+                        <td>徒歩</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section>
+            <h2>☔ 雨天代替案一覧</h2>
+            
+            <div class="image-gallery">
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1583680599407-f5c6e5570ab1?q=80&w=2070&auto=format&fit=crop" alt="ホテルロビー">
+                    <div class="image-caption">
+                        <h4>ホテルロビーでのくつろぎ</h4>
+                        <p>雨天時も贅沢なリゾート体験</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1578898396220-6400a2b4e1b9?q=80&w=2070&auto=format&fit=crop" alt="室内ヨガ">
+                    <div class="image-caption">
+                        <h4>室内でのヨガセッション</h4>
+                        <p>雨でも心地よい朝の体験</p>
+                    </div>
+                </div>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>晴天時アクティビティ</th>
+                        <th>雨天時の代替案</th>
+                        <th>備考</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>恋人岬でのサンセット撮影</td>
+                        <td>ホテル内ロビー階またはTasiラウンジでの記念撮影（屋内＋窓越しオーシャンビュー）</td>
+                        <td>背景に海が見える時間帯を選ぶと◎</td>
+                    </tr>
+                    <tr>
+                        <td>GPOでのショッピング後の移動／恋人岬</td>
+                        <td>Donki → GPO内カフェ or プレイスポットで雨宿り＋予定繰り上げでTony Roma'sへ</td>
+                        <td>Tony Roma'sには早めの入店連絡を</td>
+                    </tr>
+                    <tr>
+                        <td>朝日チャレンジ（ビーチ）</td>
+                        <td>ホテルロビーまたはオーシャンビューラウンジでコーヒー＋静かな朝活</td>
+                        <td>写真や動画は後日合成加工でもOK</td>
+                    </tr>
+                    <tr>
+                        <td>アサイーボウル（カフェ グッチャ）</td>
+                        <td>店内席が多く雨でも利用可。時間調整し15→14時訪問も可</td>
+                        <td>徒歩圏のため移動問題なし</td>
+                    </tr>
+                    <tr>
+                        <td>ホテルテニス・プール</td>
+                        <td>デュシット内スパ体験／屋内ジム／卓球／ライブラリー利用</td>
+                        <td>グループ分けで同時利用OK</td>
+                    </tr>
+                    <tr>
+                        <td>ヨガ（屋外）</td>
+                        <td>屋根付きスペース or 宴会場前フロアで室内ヨガに切替</td>
+                        <td>スピーカー持込で雰囲気維持</td>
+                    </tr>
+                    <tr>
+                        <td>お土産散策（徒歩）</td>
+                        <td>Tギャラリア DFS へ（屋内完結）<br>またはホテルブティック巡りに変更</td>
+                        <td>赤シャトルバスも雨天運行あり</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="note-box">
+                <p><strong>※雨天確率が高い場合の対応：</strong></p>
+                <p>朝の段階でグループLINEにて切替案アナウンスをおすすめします。「小雨なら決行」「雷・豪雨なら即切替」など事前ルール共有も有効です。</p>
+            </div>
+        </section>
+        
+        <section>
+            <h3>注意事項・まとめ</h3>
+            <p>これで前泊から帰国までの全工程・予約・移動が一目で分かります。追加の変更や質問があれば、遠慮なくお知らせください。</p>
+            
+            <div class="tag">透明度抜群の海</div>
+            <div class="tag">絶品グルメ</div>
+            <div class="tag">最高の仲間</div>
+            <div class="tag">記念写真</div>
+            <div class="tag">リゾートステイ</div>
+            
+            <p><strong>Have a blast & keep the engine running!</strong></p>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="footer-wave"></div>
+        <div class="footer-content">
+            <div class="engine-logo">⚙️ 円進 ENGINE ⚙️</div>
+            <p>同期10名・グアム旅行 2025</p>
+            <p>期間：2025年6月12日(木) 〜 6月15日(日)</p>
+            <p style="margin-top: 20px;">Keep The Engine Running! 🔥</p>
+            <p>© 2025 円進チーム - 最高の思い出づくりプロジェクト</p>
+        </div>
+    </footer>
+</body>
+</html>
