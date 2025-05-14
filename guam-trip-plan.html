@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>グアム同期旅行・プレミアムプラン</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Noto+Sans+JP:wght@400;700;900&display=swap');
+    
+    :root {
+      --primary: #FF4E50;
+      --secondary: #00B4DB;
+      --accent1: #FFD700;
+      --accent2: #FC466B;
+      --light: #F8F9FA;
+      --dark: #212529;
+      --success: #57CC99;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Noto Sans JP', 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+      width: 100%;
+    }
+    
+    .header {
+      background: linear-gradient(to right, var(--accent2), var(--secondary));
+      padding: 2rem 0;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0 0 30px 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .header::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      bottom: -10px;
+      left: -10px;
+      background: url('https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.1/svg/airplane.svg') repeat;
+      opacity: 0.05;
+      transform: rotate(-5deg);
+      z-index: 0;
+    }
+    
+    .header-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: white;
+    }
+    
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      margin-bottom: 1rem;
+      text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+      background: linear-gradient(to right, white, var(--accent1));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shimmer 2s infinite;
+      line-height: 1.2;
+    }
+    
+    @keyframes shimmer {
+      0% { background-position: -100% 0; }
+      100% { background-position: 200% 0; }
+    }
+    
+    .subtitle {
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: white;
+    }
+    
+    .date-badge {
+      background-color: var(--accent1);
+      color: var(--dark);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transform: rotate(-2deg);
+      font-size: clamp(0.8rem, 2vw, 1rem);
+    }
+    
+    .concept-box {
+      background-color: rgba(255,255,255,0.9);
+      padding: 1.5rem;
+      border-radius: 15px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+      border-left: 5px solid var(--accent2);
+      font-size: clamp(0.9rem, 2vw, 1rem);
+    }
+    
+    .concept-box::after {
+      content: "💡";
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 2.5rem;
+      opacity: 0.2;
+    }
+    
+    .section {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 15px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+    
+    .section-title {
+      display: flex;
+      align-items: center;
+      font-size: clamp(1.3rem, 4vw, 1.8rem);
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+      position: relative;
+    }
+    
+    .section-title::before {
+      content: "";
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 60%;
+    }
+    
+    .section-content {
+      padding-left: 0.5rem;
+    }
+    
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+    
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 5px;
+      bottom: 5px;
+      width: 4px;
+      background: linear-gradient(to bottom, var(--primary), var(--secondary));
+      border-radius: 4px;
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      padding-left: 1rem;
+    }
+    
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -24px;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      background-color: white;
+      border: 3px solid var(--accent1);
+      border-radius: 50%;
+      z-index: 1;
+    }
+    
+    .timeline-item h3 {
+      font-size: clamp(1.1rem, 3vw, 1.3rem);
+      margin-bottom: 0.5rem;
+      color: var(--secondary);
+    }
+    
+    .timeline-item p {
+      font-size: clamp(0.9rem, 2vw, 1rem);
+      line-height: 1.6;
+    }
+    
+    .highlight {
+      background-color: rgba(255, 215, 0, 0.2);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 1.2rem;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border-left: 4px solid var(--primary);
+      transition: all 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .card h3 {
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      margin-bottom: 0.5rem;
+      color: var(--secondary);
+      display: flex;
+      align-items: center;
+    }
+    
+    .card h3::before {
+      content: "💎";
+      margin-right: 10px;
+      font-size: 1.4rem;
+    }
+    
+    .card p {
+      font-size: clamp(0.85rem, 2vw, 1rem);
+    }
+    
+    .checklist {
+      list-style: none;
+    }
+    
+    .checklist li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 0.8rem;
+      font-size: clamp(0.85rem, 2vw, 1rem);
+    }
+    
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      background-color: var(--success);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+    
+    .action-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .action-list li {
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 1rem;
+      counter-increment: action-counter;
+      font-size: clamp(0.85rem, 2vw, 1rem);
+    }
+    
+    .action-list li::before {
+      content: counter(action-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 25px;
+      height: 25px;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+    
+    .weather-info {
+      background: linear-gradient(to right, #00B4DB, #0083B0);
+      color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      font-size: clamp(0.85rem, 2vw, 1rem);
+    }
+    
+    .weather-info::before {
+      content: "☀️";
+      font-size: 2rem;
+      margin-right: 1rem;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(to right, var(--accent2), var(--primary));
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 1rem;
+      box-shadow: 0 5px 15px rgba(252, 70, 107, 0.4);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(252, 70, 107, 0.6);
+    }
+    
+    .rain-alternative {
+      background-color: rgba(0, 180, 219, 0.1);
+      border-left: 3px solid var(--secondary);
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 0 10px 10px 0;
+      font-size: clamp(0.85rem, 2vw, 1rem);
+    }
+    
+    .rain-alternative::before {
+      content: "☔ 雨天代替案:";
+      font-weight: 700;
+      color: var(--secondary);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer {
+      background: linear-gradient(to right, var(--dark), #2C3E50);
+      color: white;
+      padding: 2rem 0;
+      margin-top: 3rem;
+      border-radius: 30px 30px 0 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .footer::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      right: -10px;
+      width: 100px;
+      height: 100px;
+      background-color: var(--accent1);
+      opacity: 0.1;
+      border-radius: 50%;
+    }
+    
+    .inspiration {
+      font-style: italic;
+      padding: 1.5rem;
+      background-color: rgba(255,255,255,0.05);
+      border-radius: 10px;
+      margin-top: 1rem;
+      font-size: clamp(0.85rem, 2vw, 1rem);
+    }
+    
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    
+    .shake:hover {
+      animation: shake 0.5s;
+    }
+    
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+    }
+    
+    .emoji-bullet {
+      display: inline-block;
+      width: 25px;
+      text-align: center;
+      margin-right: 5px;
+    }
+    
+    /* スマホ対応強化 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    
+    th, td {
+      padding: 10px;
+      text-align: left;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+    }
+    
+    /* テーブルのスクロール対応 */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    
+    .table-container::-webkit-scrollbar {
+      height: 6px;
+    }
+    
+    .table-container::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+    }
+    
+    .table-container table {
+      min-width: 600px;
+    }
+    
+    /* レスポンシブデザイン強化 */
+    @media (max-width: 768px) {
+      h1 {
+        margin-bottom: 0.8rem;
+      }
+      
+      .date-badge {
+        padding: 0.4rem 0.8rem;
+      }
+      
+      .section {
+        padding: 1.2rem;
+      }
+      
+      .section-title {
+        margin-bottom: 1rem;
+      }
+      
+      .card {
+        padding: 1rem;
+      }
+      
+      .timeline {
+        padding-left: 25px;
+      }
+      
+      .timeline-item {
+        padding-left: 0.5rem;
+      }
+      
+      .action-list li {
+        padding-left: 30px;
+      }
+      
+      .action-list li::before {
+        width: 22px;
+        height: 22px;
+      }
+      
+      .card h3::before {
+        font-size: 1.2rem;
+      }
+      
+      /* テーブルを縦並びにする（オプション） */
+      .responsive-table {
+        display: block;
+      }
+      
+      .responsive-table thead {
+        display: none;
+      }
+      
+      .responsive-table tbody {
+        display: block;
+      }
+      
+      .responsive-table tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      
+      .responsive-table td {
+        display: flex;
+        border-bottom: 1px solid #eee;
+        padding: 0.8rem;
+      }
+      
+      .responsive-table td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        min-width: 120px;
+        margin-right: 1rem;
+      }
+      
+      .responsive-table td:last-child {
+        border-bottom: none;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .section {
+        padding: 1rem;
+      }
+      
+      .concept-box {
+        padding: 1rem;
+      }
+      
+      .section-title::before {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="container header-content">
+      <div class="date-badge">2025年6月12日(木)～15日(日) | 10名</div>
+      <h1>"エンジン全開 × リラックス"<br><span style="font-size: 90%;">グアムツアー 4 days / 3 nights</span></h1>
+      <p class="subtitle">エンジン全開で楽しみつくす48時間</p>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="concept-box pulse">
+      <p><strong>前泊 + グアム2泊 デュシット・ビーチ・リゾート拠点</strong><br>
+      ご指定の <span class="highlight">初日：ドンキ → ハーゲンダッツ → 恋人岬 → Tony Roma's（20‑22時ロブスター）</span> および <span class="highlight">2日目・3日目の時刻指定</span> を組み込みました。交通動線は"チャーターバン＋徒歩／赤いシャトルバス"で設計しています。</p>
+    </div>
+    
+    <div class="section" id="concept">
+      <h2 class="section-title" style="--emoji: '🎯';">🗓️ 日別タイムライン（最新版）</h2>
+      <div class="section-content">
+<div style="overflow-x: auto;" class="table-container">
+          <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; min-width: 800px;">
+            <thead>
+              <tr style="background-color: var(--secondary); color: white;">
+                <th style="padding: 12px; text-align: left; min-width: 80px;">時間</th>
+                <th style="padding: 12px; text-align: left; min-width: 180px;">6/12 (木)<br>PRE-STAY</th>
+                <th style="padding: 12px; text-align: left; min-width: 180px;">6/13 (金)<br>DAY 1</th>
+                <th style="padding: 12px; text-align: left; min-width: 180px;">6/14 (土)<br>DAY 2</th>
+                <th style="padding: 12px; text-align: left; min-width: 180px;">6/15 (日)<br>DAY 3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 朝のアクティビティ -->
+              <tr style="background-color: rgba(255,255,255,0.8);">
+                <td style="padding: 12px; border-bottom: 1px solid #eee; font-weight: bold;">早朝</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;">-</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;">-</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>06:00</strong> 朝日チャレンジ<br>(ホテル前ビーチ)</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>06:30-07:30</strong> ヨガセッション<br>(ホテルガーデン／9名)</td>
+              </tr>
+              <!-- 朝食 -->
+              <tr style="background-color: rgba(255,255,255,0.9);">
+                <td style="padding: 12px; border-bottom: 1px solid #eee; font-weight: bold;">朝食</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;">-</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;">-</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>07:00</strong> 朝食ビュッフェ<br>(Tasi Grill)</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>07:45</strong> 朝食ビュッフェ</td>
+              </tr>
+              <!-- 午前 -->
+              <tr style="background-color: rgba(255,255,255,0.8);">
+                <td style="padding: 12px; border-bottom: 1px solid #eee; font-weight: bold;">午前</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;">-</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;">-</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>09:10</strong> ホテル発 → <strong>GPO</strong><br>(シャトルバス)</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>09:15</strong> パッキング／フリー<br><strong>11:00</strong> チェックアウト</td>
+              </tr>
+              <!-- 昼食/午後前半 -->
+              <tr style="background-color: rgba(255,255,255,0.9);">
+                <td style="padding: 12px; border-bottom: 1px solid #eee; font-weight: bold;">昼/午後①</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;">-</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>15:30</strong> 空港→ホテル着／<br>チェックイン</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>13:00</strong> GPO発バス →<br><strong>14:00</strong> ホテル戻り</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>11:00-13:30</strong> 近隣でお土産ショッピング</td>
+              </tr>
+              <!-- 午後 -->
+              <tr style="background-color: rgba(255,255,255,0.8);">
+                <td style="padding: 12px; border-bottom: 1px solid #eee; font-weight: bold;">午後②</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>18:30</strong> 京成臼井駅 集合 →<br>Airbnb〈タタミハウス〉徒歩8分</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>16:00-17:30</strong> GPOへ移動<br>- <strong>Don Quijote</strong> ショッピング<br>- <strong>Häagen-Dazs</strong> アイスブレイク</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>15:00</strong> アサイーボウル @<br><strong>Café Gudcha</strong>(タモン中心)</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>14:00</strong> チャーターバンで空港へ</td>
+              </tr>
+              <!-- 夕方/夜 -->
+              <tr style="background-color: rgba(255,255,255,0.9);">
+                <td style="padding: 12px; border-bottom: 1px solid #eee; font-weight: bold;">夕方/夜</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>19:00</strong> 近隣スーパーで朝食・機内食買出し<br><strong>20:00</strong> 前夜祭ブリーフィング／Tシャツ配布</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>18:10</strong> 恋人岬 Two Lovers Point<br>夕景撮影</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>16:00-17:30</strong> ホテル内テニス／<br>プール自由行動</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>16:45</strong> JL942 離陸 →<br><strong>19:30</strong> 成田着</td>
+              </tr>
+              <!-- ディナー/パーティー -->
+              <tr style="background-color: rgba(255,255,255,0.8);">
+                <td style="padding: 12px; border-bottom: 1px solid #eee; font-weight: bold;">ディナー/<br>パーティー</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>22:30</strong> 就寝</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>20:00-22:00</strong><br><strong>Tony Roma's Guam</strong><br>巨大ロブスター & リブ<br>(予約済)</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>18:00-20:00</strong><br>会社合同パーティー<br>(宴会場)</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;">-</td>
+              </tr>
+              <!-- 就寝 -->
+              <tr style="background-color: rgba(255,255,255,0.9);">
+                <td style="padding: 12px; border-bottom: 1px solid #eee; font-weight: bold;">帰宿</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;">-</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>22:15</strong> ホテル着 →<br>ルームパーティー or 就寝</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;">-</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;">-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="background-color: rgba(255, 216, 0, 0.1); padding: 10px; border-radius: 8px; margin-top: 10px; border-left: 3px solid var(--accent1);">
+          <p><strong>注：</strong> スカイダイビング／バナナボート／ドローン／GoPro は今回プランから除外しています。追加アクティビティをご希望の場合は再アサイン可能です。</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section" id="transportation">
+      <h2 class="section-title" style="--emoji: '🚐';">🚐 移動ハイライト（変更箇所のみ抜粋）</h2>
+      <div class="table-container">
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+          <thead>
+            <tr style="background-color: var(--primary); color: white;">
+              <th style="padding: 12px; text-align: left; border-radius: 10px 0 0 0;">区間</th>
+              <th style="padding: 12px; text-align: left;">手段</th>
+              <th style="padding: 12px; text-align: left;">所要</th>
+              <th style="padding: 12px; text-align: left; border-radius: 0 10px 0 0;">備考</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background-color: rgba(255,255,255,0.8);">
+              <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>ホテル 15:45 → GPO</strong></td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">チャーターバン</td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">10分</td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">Donki & Häagen-Dazs<br>荷物を車内保管可</td>
+            </tr>
+            <tr style="background-color: rgba(255,255,255,0.9);">
+              <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>GPO 18:00 → 恋人岬</strong></td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">同バン</td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">10分</td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">サンセット時刻 18:40 頃に余裕到着</td>
+            </tr>
+            <tr style="background-color: rgba(255,255,255,0.8);">
+              <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>恋人岬 19:30 → Tony Roma's</strong></td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">同バン</td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">10分</td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">予約 20:00-22:00／Tumon Sands Plaza 前</td>
+            </tr>
+            <tr style="background-color: rgba(255,255,255,0.9);">
+              <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>2日目 ホテル → GPO</strong></td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">赤いシャトルバス</td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">15分</td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">09:10 発 – $10 1DayPass</td>
+            </tr>
+            <tr style="background-color: rgba(255,255,255,0.8);">
+              <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>2日目 GPO → ホテル</strong></td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">赤いシャトルバス</td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">45分</td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">13:00 発＝14:00 着見込み</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <div class="section" id="restaurants">
+      <h2 class="section-title" style="--emoji: '🍽️';">🍽️ レストラン予約ステータス</h2>
+      <div class="table-container">
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+          <thead>
+            <tr style="background-color: var(--accent2); color: white;">
+              <th style="padding: 12px; text-align: left; border-radius: 10px 0 0 0;">店名</th>
+              <th style="padding: 12px; text-align: left;">日時</th>
+              <th style="padding: 12px; text-align: left;">人数</th>
+              <th style="padding: 12px; text-align: left; border-radius: 0 10px 0 0;">メニュー／特記事項</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background-color: rgba(255,255,255,0.8);">
+              <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>Tony Roma's Guam</strong></td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">6/13 (金)<br>20:00-22:00</td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">10名</td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">ロブスター 1.5 lb ×5<br>専用タワー前菜付<br>HappyHour ドリンク適用</td>
+            </tr>
+            <tr style="background-color: rgba(255,255,255,0.9);">
+              <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>Café Gudcha</strong></td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">6/14 (土)<br>15:00</td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">10名</td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">アサイーボウル &<br>コールドブリュー セット予約</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <div class="section" id="hotels">
+      <h2 class="section-title" style="--emoji: '🏨';">2️⃣ 推奨ホテル（代表例）</h2>
+      <div class="section-content">
+        <div class="card">
+          <h3>🌴 デュシット・ビーチ・リゾート・グアム</h3>
+          <p>タモン中心に位置する上質なリゾートホテル。広大なプール、プライベートビーチ、高級スパ、複数のレストランを完備。<br>
+          <strong>特典:</strong> 10名以上の予約で専用ビーチエリア確保＆ウェルカムドリンク</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section" id="modifications">
+      <h2 class="section-title" style="--emoji: '🔄';">☑️ 今回の修正まとめ</h2>
+      <div class="section-content">
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+          <thead>
+            <tr style="background-color: var(--success); color: white;">
+              <th style="padding: 12px; text-align: left; border-radius: 10px 0 0 0; width: 60%;">修正点</th>
+              <th style="padding: 12px; text-align: left; border-radius: 0 10px 0 0; width: 40%;">対応状況</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background-color: rgba(255,255,255,0.8);">
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">Donキ + Häagen-D → 恋人岬 → Tony Roma's 20-22時</td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;"><span class="highlight"><strong>反映</strong></span></td>
+            </tr>
+            <tr style="background-color: rgba(255,255,255,0.9);">
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">2日目 AM GPO買い物 & PM アサイーボウル → テニス → パーティー</td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;"><span class="highlight"><strong>反映</strong></span></td>
+            </tr>
+            <tr style="background-color: rgba(255,255,255,0.8);">
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">3日目 6:30-ヨガ／11:00チェックアウト／14:00送迎</td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;"><span class="highlight"><strong>反映</strong></span></td>
+            </tr>
+            <tr style="background-color: rgba(255,255,255,0.9);">
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">GoPro／ドローン削除</td>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;"><span class="highlight"><strong>除外済</strong></span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>これでご指定のアクションすべてを織り込んだ <strong>最終版フライトプラン</strong> となります。さらに細かい微調整（食事メニュー変更・移動手段アップグレードなど）があれば、いつでもお申し付けください。</p>
+      </div>
+    </div>
+    
+    <div class="section" id="rain">
+      <h2 class="section-title" style="--emoji: '☔';">🌦️ 雨天代替アイデア</h2>
+      <div class="section-content">
+        <div class="card">
+          <h3>☔ 雨プロジェクト</h3>
+          <p>スコールが来た瞬間、ホテル屋上で Rain Dance Photo（透明傘＋バックライト）を敢行。雨＝エンジンの燃料としてポジティブ演出。SNS映えする唯一無二の写真に。</p>
+        </div>
+        <div class="card">
+          <h3>🌊 PIC屋内ウォーターパーク</h3>
+          <p>屋外アクティビティが難しい場合に備え、PICグアムのデイパス（約$70）を予約可能に。屋内プール、ウォータースライド、スパ施設が使い放題。</p>
+        </div>
+        <div class="card">
+          <h3>🎭 SandCastleイリュージョンショー</h3>
+          <p>サンセットクルーズの代わりにイリュージョンショー（約$125）をオプション予約。ラスベガス級のショーが雨でも楽しめます。</p>
+        </div>
+        <div class="card">
+          <h3>🛍️ メガショッピングツアー</h3>
+          <p>ドンキ→DFS→マイクロネシアモール→GPOを巡るショッピングマラソン。各所での記念写真とレシートコレクションで思い出を形に。</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section" id="extras">
+      <h2 class="section-title" style="--emoji: '✨';">✨ 特別な体験ポイント</h2>
+      <div class="section-content">
+        <div class="card">
+          <h3>🦞 Tony Roma's 巨大ロブスター</h3>
+          <p>グアム店限定の特大ロブスター（1.5lb）を全員でシェア。専用タワー前菜と Happy Hour ドリンクで初日の夜を豪華に彩ります。</p>
+        </div>
+        <div class="card">
+          <h3>🥣 Café Gudcha アサイーボウル</h3>
+          <p>地元で人気のカフェで本格アサイーボウルを堪能。ヘルシーで美しいビジュアルのSNS映えスポットです。</p>
+        </div>
+        <div class="card">
+          <h3>🌅 Two Lovers Point サンセット</h3>
+          <p>恋人岬から見る夕日は一生の思い出に。絶景ポイントでの集合写真は旅の象徴的な瞬間となります。</p>
+        </div>
+        <div class="card">
+          <h3>🧘 ホテルガーデンでのヨガセッション</h3>
+          <p>最終日の朝を穏やかに始める特別なヨガセッション。心と体をリラックスさせて帰国に備えます。</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section" id="checklist">
+      <h2 class="section-title" style="--emoji: '📋';">5️⃣ 準備チェックリスト（抜粋）</h2>
+      <div class="section-content">
+        <ul class="checklist">
+          <li><strong>ESTA不要:</strong> 日本国籍は45日以内ならビザ免除。パスポートだけでOK。</li>
+          <li><strong>海外旅行保険:</strong> スカイダイビング対応オプションをつける。</li>
+          <li><strong>服装:</strong> 通気速乾のTシャツ／水着2枚／薄手レインジャケット。</li>
+          <li><strong>通信:</strong> SIMはDocomo Pacific eSIMが便利（空港自販機）。</li>
+          <li><strong>現金:</strong> クレジット主流だが、屋台用に$50程度を小額紙幣で。</li>
+          <li><strong>天候対策:</strong> 日焼け止め（SPF50以上）、サングラス、折りたたみ傘。</li>
+          <li><strong>必需品:</strong> 常備薬、眼鏡・コンタクトのスペア、モバイルバッテリー。</li>
+          <li><strong>必要書類:</strong> パスポートコピー、保険証書、緊急連絡先リスト。</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="section" id="next-actions">
+      <h2 class="section-title" style="--emoji: '🚀';">次の実務アクション</h2>
+      <div class="section-content">
+        <ol class="action-list">
+          <li>Tony Roma's Guamでのディナー予約最終確認（ロブスターのサイズ・数を再確認）</li>
+          <li>赤いシャトルバスの時刻表と乗り場の最新情報収集</li>
+          <li>Café Gudchaでのアサイーボウル予約詳細の確認</li>
+          <li>ホテルでのヨガセッション実施場所の事前確保</li>
+          <li>全員分のTシャツを前泊タタミハウスに配送手配</li>
+        </ol>
+        <div style="margin-top: 20px; background-color: rgba(255,255,255,0.7); padding: 15px; border-radius: 10px; border-left: 3px solid var(--accent2);">
+          <p style="text-align: center; font-weight: bold; margin-bottom: 10px;">Let's keep the engine running and make every second count!</p>
+        </div>
+        <a href="#" class="cta-button shake">今すぐ最終確認を開始！</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <div class="container">
+      <h2>最後に</h2>
+      <div class="inspiration">
+        前泊から帰国まで、同期10人で忘れられない96時間。<br>
+        恋人岬のサンセット、Tony Roma'sのロブスター、Café Gudchaのアサイーボウル、ホテルテニス...<br>
+        アクティブな時間と余裕のあるリラックスタイムをバランス良く組み合わせた、"エンジン全開 × リラックス"の旅を一緒に楽しみましょう！
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</body>
+</html>
