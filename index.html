@@ -283,6 +283,7 @@
             z-index: 2;
         }
         
+        /* 画像の最適化 */
         .image-card img {
             width: 100%;
             height: 240px;
@@ -290,6 +291,36 @@
             display: block;
             transition: all 0.5s ease;
             filter: saturate(1.2);
+            background-color: #f0f0f0; /* 画像読み込み前の背景色 */
+        }
+        
+        /* 画像読み込み失敗時のフォールバック */
+        .image-placeholder {
+            width: 100%;
+            height: 240px;
+            background-color: #e0f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        /* 画像が読み込まれるまでのスケルトンローディング表示 */
+        @keyframes loading {
+            0% {
+                background-position: -200px 0;
+            }
+            100% {
+                background-position: calc(200px + 100%) 0;
+            }
+        }
+        
+        .image-loading {
+            animation: loading 1.5s infinite;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200px 100%;
+            background-repeat: no-repeat;
         }
         
         .image-card:hover img {
@@ -742,21 +773,21 @@
             
             <div class="highlights">
                 <div class="highlight-card">
-                    <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=2264&auto=format&fit=crop" alt="グアムのビーチ">
+                    <img src="https://images.unsplash.com/photo-1496737018672-b1a6be2e949c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="グアムのビーチ" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1520454974749-611b7248ffdb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';">
                     <div class="highlight-content">
                         <h3>グアムの魅力</h3>
                         <p>透明度抜群の海、美しいサンセット、南国のリゾート体験を思う存分楽しめる4日間！</p>
                     </div>
                 </div>
                 <div class="highlight-card">
-                    <img src="https://images.unsplash.com/photo-1599411830175-67f06929a6ce?q=80&w=2071&auto=format&fit=crop" alt="ホテルプール">
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="ホテルプール" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';">
                     <div class="highlight-content">
                         <h3>豪華リゾートステイ</h3>
                         <p>デュシット・ビーチ・リゾートで贅沢なひとときを。プール、海、スパなど充実の施設！</p>
                     </div>
                 </div>
                 <div class="highlight-card">
-                    <img src="https://images.unsplash.com/photo-1528690947381-3c5a5e70e444?q=80&w=2070&auto=format&fit=crop" alt="グルメ">
+                    <img src="https://images.unsplash.com/photo-1615361200141-f45961202b5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="グルメ" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1502301103665-0b95cc738daf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';">
                     <div class="highlight-content">
                         <h3>絶品グルメ体験</h3>
                         <p>特大ロブスター、アサイーボウル、朝食ビュッフェなど、グアムの美食を堪能！</p>
@@ -770,21 +801,21 @@
             
             <div class="image-gallery">
                 <div class="image-card">
-                    <img src="https://images.unsplash.com/photo-1600240644455-fd911f7cd44a?q=80&w=2060&auto=format&fit=crop" alt="グアムビーチ">
+                    <img src="https://images.unsplash.com/photo-1573843981713-497931511a1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="グアムビーチの朝日" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';">
                     <div class="image-caption">
                         <h4>絶景ビーチでの朝日</h4>
                         <p>朝日チャレンジで最高の1日をスタート！</p>
                     </div>
                 </div>
                 <div class="image-card">
-                    <img src="https://images.unsplash.com/photo-1589279715734-6631a314dca4?q=80&w=2070&auto=format&fit=crop" alt="恋人岬">
+                    <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="恋人岬のサンセット" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1566475955255-404134a79aeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';">
                     <div class="image-caption">
                         <h4>恋人岬のサンセット</h4>
                         <p>記念撮影にぴったりの絶景スポット</p>
                     </div>
                 </div>
                 <div class="image-card">
-                    <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?q=80&w=2069&auto=format&fit=crop" alt="ビーチヨガ">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="ビーチヨガ" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1599447292180-45fd84092ef4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';">
                     <div class="image-caption">
                         <h4>朝のビーチヨガ</h4>
                         <p>最終日は爽やかなヨガで締めくくり</p>
@@ -822,7 +853,7 @@
                         <td>06:00<br>07:00<br>09:10<br>13:00<br>15:00<br>16:00<br>18:00‑20:00</td>
                         <td>朝日チャレンジ（ホテル前ビーチ）<br>朝食ビュッフェ<br>ホテル発 → GPO（買い物）<br>バス発 → 14:00 ホテル着<br>Café Gudcha でアサイーボウル<br>テニス／プールなど自由行動<br>会社合同パーティー（ホテル宴会場）</td>
                         <td>—<br>朝<br>—<br>昼<br>おやつ<br>—<br>夕</td>
-                        <td>—<br>—<br>赤いシャトルバス<br>赤バス<br>徒歩<br>—<br>—</td>
+                        <td>—<br>—<br>シャトルバス<br>赤バス<br>徒歩<br>—<br>—</td>
                     </tr>
                     <tr class="highlight">
                         <td><span class="day-label">6/15 (日)</span><br>DAY 3</td>
@@ -840,14 +871,14 @@
             
             <div class="image-gallery">
                 <div class="image-card">
-                    <img src="https://images.unsplash.com/photo-1590073242678-70ee3fc28f8a?q=80&w=2121&auto=format&fit=crop" alt="キャビンイメージ">
+                    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="タタミハウス" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';">
                     <div class="image-caption">
                         <h4>〈タタミハウス〉での前泊</h4>
                         <p>旅の始まりを祝う特別な空間</p>
                     </div>
                 </div>
                 <div class="image-card">
-                    <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=2187&auto=format&fit=crop" alt="シーフードディナー">
+                    <img src="https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="特大ロブスターディナー" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1599458448510-59aecaea4752?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';">
                     <div class="image-caption">
                         <h4>Tony Roma's 特大ロブスター</h4>
                         <p>グアム到着初日の豪華ディナー</p>
@@ -898,14 +929,14 @@
             
             <div class="image-gallery">
                 <div class="image-card">
-                    <img src="https://images.unsplash.com/photo-1555626906-fcf10d6851b4?q=80&w=2070&auto=format&fit=crop" alt="シャトルバス">
+                    <img src="https://images.unsplash.com/photo-1468818438311-4bab781ab9b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="赤いシャトルバス" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1556122071-f8335932f9ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';">
                     <div class="image-caption">
                         <h4>便利な赤いシャトルバス</h4>
                         <p>GPOへのショッピングに最適</p>
                     </div>
                 </div>
                 <div class="image-card">
-                    <img src="https://images.unsplash.com/photo-1516437124483-b7025d0f434b?q=80&w=1964&auto=format&fit=crop" alt="ビーチウォーク">
+                    <img src="https://images.unsplash.com/photo-1437719417032-8595fd9e9dc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="ビーチウォーク" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';">
                     <div class="image-caption">
                         <h4>ビーチサイドの徒歩移動</h4>
                         <p>ホテル周辺は景色を楽しみながら</p>
@@ -956,14 +987,14 @@
             
             <div class="image-gallery">
                 <div class="image-card">
-                    <img src="https://images.unsplash.com/photo-1583680599407-f5c6e5570ab1?q=80&w=2070&auto=format&fit=crop" alt="ホテルロビー">
+                    <img src="https://images.unsplash.com/photo-1542759564-7ccbb6ac450a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="ホテルロビー" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1561501878-aabd62634533?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';">
                     <div class="image-caption">
                         <h4>ホテルロビーでのくつろぎ</h4>
                         <p>雨天時も贅沢なリゾート体験</p>
                     </div>
                 </div>
                 <div class="image-card">
-                    <img src="https://images.unsplash.com/photo-1578898396220-6400a2b4e1b9?q=80&w=2070&auto=format&fit=crop" alt="室内ヨガ">
+                    <img src="https://images.unsplash.com/photo-1588286840104-8957b019727f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="室内ヨガ" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';">
                     <div class="image-caption">
                         <h4>室内でのヨガセッション</h4>
                         <p>雨でも心地よい朝の体験</p>
